@@ -24,6 +24,7 @@ public class SwitchWeek {
                 break;
             case 7:
                 name = "Воскресенье";
+                break;
             default:
                 name = "Ошибка";
                 break;
