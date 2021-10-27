@@ -7,7 +7,7 @@ public class Converter {
     }
 
     public static float rubleToDollar(float value) {
-        float rsl = value / 60; /* формула перевода рублей в доллары. */
+        float rsl = value / 60;
         return rsl;
     }
 
@@ -16,9 +16,7 @@ public class Converter {
         float dollar = Converter.rubleToDollar(300);
         System.out.println("140 rubles are " + euro + " euro(s).");
         System.out.println("300 rubles are " + dollar + " dollar(s).");
-        /*
-         * Test
-         */
+
         float in = 300;
         float expected = 5;
         float out = Converter.rubleToDollar(in);
