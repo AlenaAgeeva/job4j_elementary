@@ -21,11 +21,24 @@ public class MatrixCheckTest {
         char[][] input = {
                 {' ', ' ', ' '},
                 {'X', 'p', 'X'},
-                {' ', ' ', ' '},
                 {'X', 'X', 'u'},
         };
-        int row = 1;
+        int row = 2;
         boolean result = MatrixCheck.monoHorizontal(input, row);
         Assert.assertFalse(result);
+    }
+
+    @Test
+    public void whenHasMonoHorizontal5() {
+        char[][] input = {
+                {' ', ' ', ' ', ' ', ' '},
+                {'X', 'p', 'X', ' ', ' '},
+                {' ', ' ', ' ', ' ', ' '},
+                {'X', 'X', 'X', 'X', ' '},
+                {'X', 'X', 'X', 'X', 'X'},
+        };
+        int row = 4;
+        boolean result = MatrixCheck.monoHorizontal(input, row);
+        Assert.assertTrue(result);
     }
 }
