@@ -20,8 +20,8 @@ public class MatrixCheckTest {
     public void whenHasNotMonoHorizontal() {
         char[][] input = {
                 {' ', ' ', ' '},
-                {'X', 'p', 'X'},
-                {'X', 'X', 'u'},
+                {'X', ' ', 'X'},
+                {'X', 'X', ' '},
         };
         int row = 2;
         boolean result = MatrixCheck.monoHorizontal(input, row);
@@ -32,7 +32,7 @@ public class MatrixCheckTest {
     public void whenHasMonoHorizontal5() {
         char[][] input = {
                 {' ', ' ', ' ', ' ', ' '},
-                {'X', 'p', 'X', ' ', ' '},
+                {'X', 'X', 'X', ' ', ' '},
                 {' ', ' ', ' ', ' ', ' '},
                 {'X', 'X', 'X', 'X', ' '},
                 {'X', 'X', 'X', 'X', 'X'},
