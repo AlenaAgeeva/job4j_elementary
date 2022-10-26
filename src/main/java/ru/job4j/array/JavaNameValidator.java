@@ -12,7 +12,8 @@ public class JavaNameValidator {
 
         for (int i = 1; i < name.length(); i++) {
             int c = name.codePointAt(i);
-            if (isUpperLatinLetter(c) || isLowerLatinLetter(c)) {
+            if (isUpperLatinLetter(c)
+                    || isLowerLatinLetter(c)) {
                 continue;
             } else {
                 if (!isSpecialSymbol(c)) {
