@@ -23,7 +23,6 @@ public class JavaNameValidator {
                 }
             }
         }
-
         return true;
     }
 
