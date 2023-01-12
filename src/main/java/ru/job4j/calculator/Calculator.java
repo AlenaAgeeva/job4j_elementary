@@ -26,6 +26,6 @@ public class Calculator {
         System.out.println(add(one, two));
         System.out.println(divide(six, two));
         System.out.println(subtract(five, two));
-        System.out.println(multiply(4, two));
+        System.out.println(multiply(four, two));
     }
 }
