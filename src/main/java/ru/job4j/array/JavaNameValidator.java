@@ -9,7 +9,6 @@ public class JavaNameValidator {
         ) {
             return false;
         }
-
         for (int i = 1; i < name.length(); i++) {
             int c = name.codePointAt(i);
             if (isUpperLatinLetter(c)
