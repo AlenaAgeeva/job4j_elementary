@@ -1,6 +1,5 @@
 package ru.job4j.queue;
 
-import java.util.Iterator;
 import java.util.Queue;
 
 public class AppleStore {
@@ -14,31 +13,16 @@ public class AppleStore {
     }
 
     public String getLastHappyCustomer() {
-        Customer customer = null;
-        Iterator<Customer> it = queue.iterator();
-        for (int i = 1; it.hasNext(); i++) {
-            if (i == count) {
-                customer = it.next();
-                break;
-            } else {
-                it.next();
-            }
+        for (int i = 1; i < count; i++) {
+            queue.poll();
         }
-        return customer.name();
+        return queue.peek().name();
     }
 
     public String getLastUpsetCustomer() {
-
-        Customer customer = null;
-        Iterator<Customer> it = queue.iterator();
-        for (int i = 1; it.hasNext(); i++) {
-            if (i == count + 1) {
-                customer = it.next();
-                break;
-            } else {
-                it.next();
-            }
+        for (int i = 1; i <= count; i++) {
+            queue.poll();
         }
-        return customer.name();
+        return queue.peek().name();
     }
 }
