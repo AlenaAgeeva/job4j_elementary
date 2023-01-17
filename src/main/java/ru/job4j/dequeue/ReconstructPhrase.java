@@ -14,12 +14,12 @@ public class ReconstructPhrase {
 
     private String getEvenElements() {
         StringBuilder str = new StringBuilder();
-        Iterator<Character> it = evenElements.iterator();
-        for (int i = 0; it.hasNext(); i++) {
+        int size = evenElements.size();
+        for (int i = 0; i < size; i++) {
             if (i % 2 == 0) {
-                str.append(it.next());
+                str.append(evenElements.poll());
             } else {
-                it.next();
+                evenElements.poll();
             }
         }
         return str.toString();
@@ -27,9 +27,9 @@ public class ReconstructPhrase {
 
     private String getDescendingElements() {
         StringBuilder str = new StringBuilder();
-        Iterator<Character> it = descendingElements.descendingIterator();
-        for (int i = 0; it.hasNext(); i++) {
-            str.append(it.next());
+        int size = descendingElements.size();
+        for (int i = 0; i < size; i++) {
+            str.append(descendingElements.pollLast());
         }
         return str.toString();
     }
