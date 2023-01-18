@@ -40,11 +40,7 @@ public class AnalyzeByMap {
         Map<String, Integer> map = new LinkedHashMap<>();
         for (Pupil p : pupils) {
             for (Subject s : p.subjects()) {
-                if (!map.containsKey(s.name())) {
-                    map.put(s.name(), s.score());
-                } else {
-                    map.replace(s.name(), s.score() + map.get(s.name()));
-                }
+                map.merge(s.name(), s.score(), Integer::sum);
             }
         }
         return map;
