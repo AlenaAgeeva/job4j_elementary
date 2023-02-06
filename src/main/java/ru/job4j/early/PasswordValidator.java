@@ -1,6 +1,5 @@
 package ru.job4j.early;
 
-
 import static java.lang.Character.*;
 
 public class PasswordValidator {
@@ -20,16 +19,12 @@ public class PasswordValidator {
         for (char ch : symbols) {
             if (isDigit(ch)) {
                 isD = true;
-                continue;
             } else if (isUpperCase(ch)) {
                 isU = true;
-                continue;
             } else if (isLowerCase(ch)) {
                 isL = true;
-                continue;
             } else if (!isLetterOrDigit(ch)) {
                 isLoD = true;
-                continue;
             }
         }
         if (!isD) {
