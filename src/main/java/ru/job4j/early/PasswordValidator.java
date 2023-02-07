@@ -17,7 +17,9 @@ public class PasswordValidator {
         boolean isL = false;
         boolean isLoD = false;
         for (char ch : symbols) {
-            if (isDigit(ch)) {
+            if (isD && isU && isL && isLoD) {
+                break;
+            } else if (isDigit(ch)) {
                 isD = true;
             } else if (isUpperCase(ch)) {
                 isU = true;
