@@ -1,6 +1,7 @@
 package ru.job4j.hmap;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class AnalyzeByMap {
     public static double averageScore(List<Pupil> pupils) {
@@ -30,10 +31,10 @@ public class AnalyzeByMap {
     }
 
     public static List<Label> averageScoreBySubject(List<Pupil> pupils) {
-        Map<String, Integer> map = getMapLabels(pupils);
-        List<Label> label = new ArrayList<>();
-        map.forEach((key, value) -> label.add(new Label(key, (double) value / pupils.size())));
-        return label;
+        Map<String, Integer> totalScores = getMapLabels(pupils);
+        return totalScores.entrySet().stream()
+                .map(entry -> new Label(entry.getKey(), (double) entry.getValue() / pupils.size()))
+                .collect(Collectors.toList());
     }
 
     private static Map<String, Integer> getMapLabels(List<Pupil> pupils) {
@@ -61,10 +62,11 @@ public class AnalyzeByMap {
     }
 
     public static Label bestSubject(List<Pupil> pupils) {
-        Map<String, Integer> map = getMapLabels(pupils);
-        List<Label> label = new ArrayList<>();
-        map.forEach((key, value) -> label.add(new Label(key, (double) value)));
-        label.sort(Comparator.naturalOrder());
-        return label.get(label.size() - 1);
+        Map<String, Integer> subjectScores = getMapLabels(pupils);
+        return subjectScores.entrySet()
+                .stream()
+                .map(entry -> new Label(entry.getKey(), entry.getValue().doubleValue()))
+                .max(Comparator.naturalOrder())
+                .orElseThrow(() -> new NoSuchElementException("No subjects found"));
     }
 }
